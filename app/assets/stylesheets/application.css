@@ -1,0 +1,429 @@
+
+.main-header {
+  height: 50px;
+  background-color: #f8f8f8; /* optional background color */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #ddd; /* optional border */
+}
+
+h1 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  margin: 1.5rem 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.rating.unrated {
+  color: #444444; /* dark grey */
+}
+
+.rating.rating-0 {
+  color: #444444; /* dark grey */
+}
+
+.rating.rating-1,
+.rating.rating-2,
+.rating.rating-3,
+.rating.rating-4,
+.rating.rating-5 {
+  color: red;
+}
+
+.rating.rating-6,
+.rating.rating-7,
+.rating.rating-8 {
+  color: darkgreen;
+}
+
+.rating.rating-9,
+.rating.rating-10 {
+  color: green;
+  font-weight: bold;
+}
+
+
+.active { 
+background-color: yellow;
+}
+
+.nav-section {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-section a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-section a:hover {
+  color: #007BFF; /* highlight color on hover */
+}
+
+
+.recipe {
+  background-color: #f7f8f9; /* light grey background for container */
+  padding: 1.5em 2em;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 1.5em auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  color: #34495e;
+}
+
+/* Recipe name as a big header */
+.name {
+  font-family: 'Georgia', serif;
+  font-size: 4rem; /* make text bigger */
+  font-weight: 700;
+  color: #2c3e50;
+  background-color: #E0FFFF;
+  margin-bottom: 0.5em;
+  border-bottom: 3px solid #3498db; /* blue underline */
+  padding-bottom: 0.25em;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+}
+
+/* Style unvisited links inside .name */
+.name a:link {
+  color: #2c3e50;      /* same as text color */
+  text-decoration: underline; /* show underline */
+}
+
+/* Style visited links inside .name */
+.name a:visited {
+  color: inherit;       /* use same color as text (removes standard visited blue/purple) */
+  text-decoration: none; /* no underline */
+  cursor: default;      /* optional: make cursor default to show not clickable */
+}
+
+
+.recipe-name-index a {
+  font-size: 1.5rem;       /* Make the text bigger */
+  color: inherit;          /* Use the same color as parent */
+  cursor: default;         /* Show default cursor */
+}
+
+
+.video-container {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 640px;
+  height: 480px;
+  border: 2px;
+  display: block;
+}
+/* Thumbnail image - thicker double border */
+.thumbnail img {
+  display: block;
+  max-width: 640px;
+  height: auto;
+  border: 8px double #ddd; /* thicker double border */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 1em 0;
+  object-fit: cover;
+}
+
+.thumbnail_index img {
+  width: 200px;
+  height: 150px;
+  border: 4px double #ddd;
+}
+
+.author {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a2e6e; /* dark blue */
+  margin-bottom: 0.5em;
+}
+
+.kind {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a2e6e; /* dark blue */
+  margin-bottom: 0.5em;
+}
+
+
+
+
+/* Source with dark blue color and link styling */
+.source {
+  font-size: 1rem;
+  color: #1a2e6e; /* dark blue */
+  margin-bottom: 1em;
+}
+
+.source a {
+  color: #1a2e6e; /* dark blue */
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.source a:hover,
+.source a:focus {
+  color: #3a4d9a; /* slightly lighter on hover */
+  outline: none;
+}
+
+/* Description section with smaller size */
+.description {
+  font-size: 1rem;           /* slightly smaller font size */
+  line-height: 1;          /* tighter line spacing */
+  color: #34495e;
+  margin-top: 0;
+  margin-bottom: 1em;
+  white-space: pre-line;
+  background-color: #f0f0f0;
+  padding: 0.75em 1em;       /* less padding */
+  border-radius:20px;
+  max-width: 900px;          /* limit width */
+}
+
+/* Remove background color from links inside description */
+.description a {
+  background-color: transparent;
+}
+
+/* General links styling */
+a {
+  color: #2980b9;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #3498db;
+  outline: none;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin-right: 0.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #2980b9;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #3498db;
+  outline: none;
+}
+
+.btn-danger {
+  background-color: #c0392b;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #e74c3c;
+}
+
+.error_submission {
+  color: red;
+}
+
+
+# FORM CSS
+
+/* Container to constrain form width and center */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Style each form row for label + input alignment */
+.form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Labels fixed width aligned right */
+.form-row label {
+  width: 120px;
+  margin-right: 12px;
+  font-weight: bold;
+  color: #333;
+  text-align: right;
+}
+
+
+/* Inputs fill remaining row */
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+/* Textarea taller */
+.form-row textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Submit button styling */
+.form-row .submit-btn {
+  margin-left: 132px; /* Align to inputs */
+  background-color: #007bff;
+  border: none;
+  padding: 10px 18px;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-row .submit-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* large spacing between pairs */
+}
+
+.radio-group label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.15rem; /* very small space between radio and label text */
+}
+
+.radio-group input[type="radio"] {
+  margin: 0; /* remove default margin */
+  padding: 0;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+.recipe-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.filters-title {
+  display: flex;
+  flex-direction: column; /* stack buttons vertically */
+  align-items: center;    /* center buttons horizontally */
+  gap: 15px;              /* space between buttons */
+  padding: 10px 0;
+  background-color: #f5f5f5;
+}
+
+.filters {
+  display: flex;
+  gap: 10px; /* optional space between buttons */
+  justify-content: right; /* optional: center buttons horizontally */
+  flex-wrap: wrap; /* allow buttons to wrap to next line if needed */
+}
+
+.filters button {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 2px solid #007BFF;
+  background-color: white;
+  color: #007BFF;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 120px; /* optional fixed width to keep buttons uniform */
+  text-align: center;
+}
+
+.filters button:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+.filters button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+
+.form-thumbnail {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-thumbnail label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-thumbnail input[type="file"] {
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-btn-submit {
+  text-align: center;
+  background-color: #2980b9;
+}
+
+.form-btn-submit input[type="submit"] {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  background-color: #2980b9;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-btn-submit input[type="submit"]:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,61 @@
+
+
+<% cache @recipe do %>
+
+  <section class="name"> 
+    <%= @recipe.kind + ' | ' + @recipe.name %>
+    </section>
+
+
+<section class="author">
+  <%= "AUTHOR:" %>
+  <%= @recipe.author unless @recipe.author.nil? %>
+
+
+<section class="rating">
+  <%= "RATING:" %>
+  <%= @recipe.rating == '0' ? "Unrated" : @recipe.rating %>
+  </section>
+
+
+
+<section class="source">
+  <% if @recipe.source.present? && @recipe.source.start_with?('http') %>
+    <% if @recipe.source.start_with?('https://www.youtu') %>
+    <section class="video">
+  <div class="video-container">
+
+<% if @recipe.source.include?("watch?") %>
+  <% video_id = @recipe.source.split("=").last %>
+<% else %>
+  <% video_id = @recipe.source.split("/").last %>
+<% end %>
+<iframe src="https://www.youtube.com/embed/<%= video_id %>" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
+    <% else %>
+  <%= link_to @recipe.source, @recipe.source, target: '_blank', rel: 'noopener' %>
+    <% end %>
+  <% else %>
+  <%= "SOURCE:" %>
+  <%= @recipe.source %>
+
+<section class="thumbnail">
+  <%= image_tag @recipe.featured_image if @recipe.featured_image.attached? %>
+  </section>
+<% end %>
+</section>
+
+
+
+<section class="description">
+  <%= @recipe.description unless @recipe.description.nil? %>
+</section>
+
+  <section class="links">
+    <%= button_to 'Edit', edit_recipe_path(@recipe), method: :get, class: "btn" %>
+    <p></p>
+<%= button_to 'Delete', @recipe, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+</section>
+
+<% end %>
