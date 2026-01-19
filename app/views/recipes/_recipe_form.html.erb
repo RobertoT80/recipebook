@@ -1,0 +1,44 @@
+<section class="form-container">
+  <%= form_with model: @recipe do |form| %>
+    <section class="form-row">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </section>
+    <section class="form-row">
+      <%= form.label :kind %>
+      <%= form.text_field :kind %>
+    </section>
+    <section class="form-row">
+      <%= form.label :author %>
+      <%= form.text_field :author %>
+    </section>
+    <section class="form-row">
+      <%= form.label :source %>
+      <%= form.text_field :source %>
+    </section>
+
+    <section class="radio-group">
+      <%= form.radio_button :rating, 0 %>
+      <%= form.label :rating, "Unrated", value: 0 %>
+      <% (1..10).each do |num| %>
+        <%= form.radio_button :rating, num %>
+        <%= form.label :rating, num, value: num %>
+      <% end %>
+    </section>
+
+
+    <section class="description">
+      <%= form.label :description %>
+      <%= form.rich_text_area :description %>
+    </section>
+    <hr>
+    <section class="form-thumbnail">
+      <%= form.label :featured_image, style: "display:block" %>
+      <%= form.file_field :featured_image, accept: "image/*"  %>
+    </section>
+    <section class="form-row">
+      <%= form.submit %>
+      </section>
+  <% end %>
+</section>
+

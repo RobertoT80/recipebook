@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Recipebook" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <header class="main-header">
+
+  <nav class="nav-section">
+<%= image_tag "logo.png" , class: "logo", alt: "Site Logo" %>
+    </nav>
+
+    <nav class="nav-section">
+    <%= link_to "Home", root_path, class: active_class(root_path)  %>
+      </nav>
+
+    <nav class="nav-section">
+    <%= link_to "Primi", recipes_path(kind:"primo"), class: active_class(recipes_path(kind:"primo")) %>
+    </nav>
+    
+    <nav class="nav-section">
+    <%= link_to "Secondi", recipes_path(kind:"secondo"), class: active_class(recipes_path(kind:"secondo")) %>
+    </nav>
+
+    <nav class="nav-section">
+    <%= link_to "Dolci", recipes_path(kind:"dolce"), class: active_class(recipes_path(kind:"dolce")) %>
+    </nav>
+
+    <nav class="nav-section">
+    <%= link_to "Altro", recipes_path(kind:"altro"), class: active_class(recipes_path(kind:"altro")) %>
+    </nav>
+ 
+  </header>
+
+
+  <body>
+    <%= yield %>
+  </body>
+
+
+  <footer class="main-footer">
+    <hr>
+    <%= "RT 2025 |" %>
+    <%= link_to "github", 'https://github.com/RobertoT80'  %>
+    <hr>
+    </footer>
+
+</html>

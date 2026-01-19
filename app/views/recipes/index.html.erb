@@ -1,0 +1,53 @@
+<section class="name">
+<% case params[:kind] %>
+<% when "primo" %>
+  Primi
+<% when "secondo" %>
+Secondi 
+<% when "dolce" %>
+  Dolci
+<% when "contorno" %>
+  Contorni
+
+<% when "altro" %>
+  Altro
+<% else %>
+    Tutti i piatti
+<% end %>
+  </section>
+
+
+
+    <nav class="nav-section>">
+      <%= form_with url: search_path, method: :get, local: true do %>
+  <%= text_field_tag :q, params[:q], placeholder: "Search a recipe or ingredient" %>
+  <%= submit_tag "Search" %>
+<% end %>
+    </nav>
+
+
+<section class="btn">
+  <%= button_to "New Recipe", new_recipe_path , method: :get %>
+</section>
+
+  <section class="filters">
+<%= button_to "Date added", recipes_path(sort: "created_at", direction: "asc") %>
+<%= button_to "Rating", recipes_path(sort: "rating", direction: "asc") %>
+<%= button_to "Alphabetical", recipes_path(sort: "name", direction: "asc") %>
+  </section>
+
+
+<div id="recipes" class="recipes-grid">
+  <% @recipes.each do |recipe| %>
+    <div class="recipe-name-index">
+      <%= link_to recipe.name.capitalize, recipe %>
+      <section class="thumbnail_index">
+        <%= image_tag recipe.featured_image if recipe.featured_image.attached? %>
+      </section>
+      <section class="rating <%= 'unrated' if recipe.rating.nil? %> <%= "rating-#{recipe.rating}" if recipe.rating.present? %>">
+        <%= recipe.rating == '0' ? "Unrated" : recipe.rating %>
+      </section>
+    </div>
+  <% end %>
+</div>
+

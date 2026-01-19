@@ -1,0 +1,18 @@
+<% begin %>
+<% if @results.present? %>
+  <h2>Results for "<%= params[:q] %>":</h2>
+  <ul>
+    <% @results.each do |result| %>
+      <li><%= link_to result.name, result %></li>
+    <%= result.description %>
+    <% end %>
+  </ul>
+<% elsif params[:q].present? %>
+  <p>No results found for "<%= params[:q] %>"</p>
+<% end %>
+
+<% rescue => e %>
+  <%= "Could not perform the search. " %>
+<%= e.message %>
+<% end %>
+
